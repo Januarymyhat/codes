@@ -1,6 +1,7 @@
 package structure;
 
 public interface Person {
+    int MAX_AGE = 150;  // 等价于 public static final int MAX_AGE = 150;
 
     // ==================   抽象方法（必须由实现类实现）
     void speak();
@@ -11,7 +12,7 @@ public interface Person {
     // abstract void speak();
     
     String getName();
-    void printAge(int age);
+    void printAge(int a);
 
 
     // ==================   静态方法（只能通过接口名调用）

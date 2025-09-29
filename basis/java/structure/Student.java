@@ -11,6 +11,7 @@ public class Student implements Person {
 
 
     // ==================   Constructor: 永远都不能声明为 static；静态方法 != 构造函数
+    // 带参构造：让调用者指定初始值
     public Student(String firstname, String lastname, int age) {
         this.firstName = firstname;
         this.lastName = lastname;
@@ -22,6 +23,7 @@ public class Student implements Person {
         this(firstName, lastName, 0);
     }
 
+    // 无参构造：给属性一个默认值
     public Student(){
         // 更严谨
         this("Unknown", "Unkonwn", 0); 
@@ -45,8 +47,8 @@ public class Student implements Person {
     }
 
     @Override
-    public void printAge(int age) {
-        System.out.println("Given age is: " + age);
+    public void printAge(int a) {
+        System.out.println("Given age is: " + a);
     }
 
     public int getAge() {
@@ -58,6 +60,8 @@ public class Student implements Person {
     }
     // Person.info();   // 调用接口静态方法
     // Student.info();  // 调用类的静态方法
+
+    // 可以不重写getDescription()，使用接口的默认实现
 
     // ==================   Members  ==================  
 }
