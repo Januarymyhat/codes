@@ -42,7 +42,9 @@ ingredients = pd.Series(
 # 如果不写index_col=0，会创建一个名为 "Unnamed: 0" 的额外列
 reviews = pd.read_csv("../input/wine-reviews/winemag-data_first150k.csv",index_col=0)
 
-
+# 存储为csv文件
+animals = pd.DataFrame({'Cows': [12, 20], 'Goats': [22, 19]}, index=['Year 1', 'Year 2'])
+animals.to_csv("cows_and_goats.csv")
 
 
 
