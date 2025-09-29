@@ -30,5 +30,25 @@ public class Main {
         MathTeacher.info();
 
 
+        /**
+         * instanceof
+         * 用途主要是：
+         * 1. 向下转型（(SomeType) obj）前，先检查类型是否匹配
+         * 2. 多态分支时，根据不同子类型做不同逻辑
+         * 3. 避免 ClassCastException
+         */
+        System.out.println(student instanceof Person);  // 一定输出 true
+        // 常见的 instanceof 用法，是用来判断一个父类型引用是否确实指向某个子类型实例，比如
+        Object o = new Integer(5);
+        String s = (String) o; // 会在这里抛 ClassCastException
+
+        // 改为
+        if (o instanceof String) {
+            String s = (String) o;
+            // ...
+        } else {
+            // 不是 String，就执行别的逻辑
+        }
+
     }
 }
